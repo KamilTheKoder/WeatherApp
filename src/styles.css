@@ -131,3 +131,19 @@ body {
     align-items: center;
     color: var(--white);
 }
+
+.search {
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.search input {
+    background-color: var(--shadow-dark);
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    padding: 1px;
+    color: var(--shadow-light);
+    font-size: 1.5em;
+    text-align: center;
+}
