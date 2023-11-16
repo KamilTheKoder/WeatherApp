@@ -1,11 +1,21 @@
-<div class="container">
+<div class="container" *ngIf="weatherData">
   <div class="upper-data">
-    <img src="../assets/hotScene.png" alt="Hot scenary" *ngIf="14 > 15" />
-    <img src="../assets/coldScene.png" alt="cold scenary" *ngIf="14 <= 15" />
+    <img
+      src="../assets/hotScene.png"
+      alt="Hot scenary"
+      *ngIf="weatherData.current.temp_c > 15"
+    />
+    <img
+      src="../assets/coldScene.png"
+      alt="cold scenary"
+      *ngIf="weatherData.current.temp_c <= 15"
+    />
 
     <div class="weather-data">
-      <div class="location">Mosina</div>
-      <div class="temperature">{{ 11.5 | number : "1.0-0" }}°C</div>
+      <div class="location">{{ weatherData.location.name }}</div>
+      <div class="temperature">
+        {{ weatherData.current.temp_c | number : "1.0-0" }}°C
+      </div>
     </div>
   </div>
   <div class="lower-data">
@@ -19,12 +29,22 @@
         <div class="info-block-value">10°C</div>
       </div>
 
-      <div class="info-block">
+      <!-- <div class="info-block">
         <div class="info-block-label">
           <img src="../assets/hot.png" alt="" />
           <span>max</span>
         </div>
         <div class="info-block-value">20°C</div>
+      </div> -->
+
+      <div class="info-block">
+        <div class="info-block-label">
+          <img src="..//assets/forecast.png" alt="Forecast" />
+          <span>forecast</span>
+        </div>
+        <div class="info-block-value">
+          {{ weatherData.current.condition.text }}
+        </div>
       </div>
 
       <div class="info-block">
@@ -32,7 +52,7 @@
           <img src="../assets/humidity.png" alt="" />
           <span>humidity</span>
         </div>
-        <div class="info-block-value">80%</div>
+        <div class="info-block-value">{{ weatherData.current.humidity }}%</div>
       </div>
 
       <div class="info-block">
@@ -40,10 +60,14 @@
           <img src="../assets/wind.png" alt="" />
           <span>wind</span>
         </div>
-        <div class="info-block-value">11 kmh</div>
+        <div class="info-block-value">
+          <div class="info-block-value">
+            {{ weatherData.current.gust_kph | number : "1.0-0" }} km/h
+          </div>
+        </div>
       </div>
+
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
-
-<router-outlet></router-outlet>
