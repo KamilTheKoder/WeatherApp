@@ -1,12 +1,12 @@
 # WeatherApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+This is a project I've created using Angular
 
-## Development server
+## Overview
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Hey there! This page is made with Angular, TypeScript, and CSS – just a fun way to refresh some basic concepts. No need to keep an eye on the weather in Warsaw all the time. The info comes from an API, so go ahead and check what's happening in your city instead!
 
-## Code scaffolding
+## Built with
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
