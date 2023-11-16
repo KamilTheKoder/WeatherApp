@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicesService } from './services/services.service';
-import { Current, WeatherData } from './models/weather.model';
+import { WeatherData } from './models/weather.model';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +18,7 @@ export class AppComponent implements OnInit{
 
   ngOnInit():void {
     this.getWeatherData(this.cityName);
+    this.cityName = '';
   }
 
   onSubmit() {
